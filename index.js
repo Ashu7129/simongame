@@ -6,14 +6,12 @@ var userPattern = [];
 var level = 0;
 var started = false;
 
-$(document).keypress(function(){
+function start(){
     if(!started){
         nextSequence();
         started = true;
     }
-    
-});
-
+}
 
 
 
@@ -49,7 +47,7 @@ function checkSequence(current){
         var wrong = new Audio("sounds/wrong.mp3");
         wrong.play();
         $("body").addClass("game-over");
-        $("#level-title").text("Game Over !, Press any key to restart");
+        $("#level-title").text("Game Over !, Press Start key to restart");
 
         setTimeout(() => {
             $("body").removeClass("game-over");
